@@ -33,4 +33,14 @@ public class ReservationServiceTest {
 
         Assert.assertEquals(reservationService.getRefundValue(Reservation.builder().schedule(schedule).value(new BigDecimal(10L)).build()), new BigDecimal(10));
     }
+    
+    public void rescheduleReservation() {
+     System.out.println("***** rescheduleReservation() *****" );
+     try {
+    	 ReservationDTO dto = reservationService.rescheduleReservation( Long.valueOf(1), Long.valueOf(2));
+     }catch (Throwable e) {
+    	 System.out.println("Error: rescheduleReservation() : " + e.toString());
+     }
+     
+    }
 }
